@@ -29,14 +29,14 @@ class TasksController < ApplicationController
     redirect_to task_path(@task)
   end
 
-def destroy
+  def destroy
     @task.destroy
 
     # no need for app/views/tasks/destroy.html.erb
     redirect_to tasks_path
   end
 
-private
+  private
 
   def find_task
     @task = Task.find(params[:id])
